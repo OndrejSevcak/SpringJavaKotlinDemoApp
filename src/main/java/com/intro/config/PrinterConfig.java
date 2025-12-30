@@ -1,18 +1,21 @@
-package com.config;
+package com.intro.config;
 
-import com.services.BluePrinter;
-import com.services.ColourPrinter;
-import com.services.RedPrinter;
-import com.services.impl.CzechBluePrinter;
-import com.services.impl.EnglishBluePrinter;
-import com.services.impl.EnglishRedPrinter;
+import com.intro.services.BluePrinter;
+import com.intro.services.ColourPrinter;
+import com.intro.services.RedPrinter;
+import com.intro.services.impl.printer.ColourPrinterService;
+import com.intro.services.impl.printer.CzechBluePrinter;
+import com.intro.services.impl.printer.EnglishBluePrinter;
+import com.intro.services.impl.printer.EnglishRedPrinter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class PrinterConfig {
 
     @Bean
+    @Primary
     public BluePrinter bluePrinter() {
         return new EnglishBluePrinter();
     }
@@ -29,7 +32,7 @@ public class PrinterConfig {
 
     @Bean
     public ColourPrinter colourPrinter(BluePrinter bluePrinter, RedPrinter redPrinter) {
-        return new com.services.impl.ColourPrinterService(bluePrinter, redPrinter);
+        return new ColourPrinterService(bluePrinter, redPrinter);
     }
 
     //Beans are implicitly singleton scoped

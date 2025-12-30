@@ -1,6 +1,6 @@
-package com.services.impl;
+package com.intro.services.impl.printer;
 
-import com.services.BluePrinter;
+import com.intro.services.BluePrinter;
 
 public class CzechBluePrinter implements BluePrinter {
 

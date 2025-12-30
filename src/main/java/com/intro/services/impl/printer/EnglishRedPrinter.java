@@ -1,6 +1,6 @@
-package com.services.impl;
+package com.intro.services.impl.printer;
 
-import com.services.RedPrinter;
+import com.intro.services.RedPrinter;
 
 public class EnglishRedPrinter implements RedPrinter {
     @Override
