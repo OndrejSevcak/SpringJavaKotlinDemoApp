@@ -62,6 +62,11 @@ fun kotlinIntro() {
     println("There are total of ${readOnlyFruitList.count()} fruits")
 
 
+    val mutableReadonlyList = listOf("one", "two", "three")
+    mutableReadonlyList.add("four") //modification is allowed
+    mutableReadonlyList = listOf("five", "six") //reassignment is not allowed
+    
+
 }
 
 
