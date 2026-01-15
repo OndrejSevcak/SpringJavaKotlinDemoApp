@@ -4,7 +4,7 @@ import com.intro.config.PizzaConfig;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController()
+@RestController
 public class PizzaController {
 
     private final PizzaConfig pizzaConfig;
@@ -13,7 +13,7 @@ public class PizzaController {
         this.pizzaConfig = pizzaConfig;
     }
 
-    @GetMapping("/pizza-greetings")
+    @GetMapping("/pizza")
     public String getPizzaGreetings() {
         return "Hello your favorite Pizza is "
                 + pizzaConfig.getSize() + " size pizza with "
